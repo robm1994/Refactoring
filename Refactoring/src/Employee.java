@@ -24,7 +24,7 @@ public class Employee{
 		this.department = "";
 		this.salary = 0;
 		this.fullTime = false;
-	}//end Employee with no details
+	}
 
 	// Create Employee with details
 	public Employee(int employeeId, String pps, String surname, String firstName, char gender, String department, double salary,
@@ -37,7 +37,7 @@ public class Employee{
 		this.department = department;
 		this.salary = salary;
 		this.fullTime = fullTime;
-	}// end Employee with details
+	}
 
 	// Getter methods
 	public int getEmployeeId() {
@@ -116,5 +116,5 @@ public class Employee{
 		return "Employee ID: " + this.employeeId + "\nPPS Number: " + this.pps + "\nSurname: " + this.surname
 				+ "\nFirst Name: " + this.firstName + "\nGender: " + this.gender + "\nDepartment: " + this.department + "\nSalary: " + this.salary
 				+ "\nFull Time: " + bool;
-	}// end toString
-}// end class Employee
+	}
+}
