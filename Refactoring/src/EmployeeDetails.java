@@ -700,33 +700,9 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 
 	
 	private boolean checkInput() {
-		boolean valid = true;
-		// if any of inputs are in wrong format, colour text field and display
-		// message
-		if (ppsField.isEditable() && ppsField.getText().trim().isEmpty()) {
-			ppsField.setBackground(ColourClass.red);
-			valid = false;
-		} 
-		if (ppsField.isEditable() && correctPps(ppsField.getText().trim(), currentByteStart)) {
-			ppsField.setBackground(ColourClass.red);
-			valid = false;
-		} 
-		if (surnameField.isEditable() && surnameField.getText().trim().isEmpty()) {
-			surnameField.setBackground(ColourClass.red);
-			valid = false;
-		} 
-		if (firstNameField.isEditable() && firstNameField.getText().trim().isEmpty()) {
-			firstNameField.setBackground(ColourClass.red);
-			valid = false;
-		} 
-		if (genderCombo.getSelectedIndex() == 0 && genderCombo.isEnabled()) {
-			genderCombo.setBackground(ColourClass.red);
-			valid = false;
-		} 
-		if (departmentCombo.getSelectedIndex() == 0 && departmentCombo.isEnabled()) {
-			departmentCombo.setBackground(ColourClass.red);
-			valid = false;
-		}
+	
+		Validate validate = new Validate();
+		boolean valid = validate.validate1(ppsField, searchBySurnameField, firstNameField, genderCombo, departmentCombo);
 		try {
 			Double.parseDouble(salaryField.getText());
 			
